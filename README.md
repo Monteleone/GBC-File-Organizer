@@ -29,6 +29,10 @@ Here is a graphical example of the directory tree structure:
 
 
 
+
+
+
+
 The program iterates through the files in the specified directory and, for each file, checks if it meets the requirements of the console. If a file corresponds to a valid game, it creates a new folder with the same name as the game (without an extension), then moves the file into this folder. This way, the program helps organize files so that the console can correctly read game covers and associate them with the corresponding games.
 
 ### Usage with Skraper Software
