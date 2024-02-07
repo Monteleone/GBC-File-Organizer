@@ -39,21 +39,19 @@ The program iterates through the files in the specified directory and, for each 
 
 This code can be used in conjunction with the Skraper software to download game covers. Skraper is a tool that automates the process of scraping metadata and images for games. After using Skraper to download the game covers, you can use this Python script to organize the downloaded files according to the required directory structure for the Powkiddy x39 pro console.
 
-
 ### Code Description
 
 This code is a Python script that organizes files with the ".gbc" extension into folders based on their filenames. Here's what it does:
 
--   It imports two modules, os and shutil, which are used for file and directory operations.
--   It defines a function organizza_files_gba(path) which takes a path argument representing the directory where files should be organized.
+-   It imports two modules, `os` and `shutil`, which are used for file and directory operations.
+-   It defines a function `organizza_files_gba(path)` which takes a `path` argument representing the directory where files should be organized.
 -   Within the function:
-    -   It iterates through all files in the specified directory using os.listdir(path).
-    -   For each file, it constructs the full file path using os.path.join(path, filename).
-    -   It checks if the current file is a regular file (not a directory) and if its name ends with ".gbc" using os.path.isfile(filepath) and filename.endswith(".gbc").
-    -   If the conditions are met, it extracts the folder name (without the extension) using os.path.splitext(filename)[0].
-    -   It creates a new folder with the extracted name using os.makedirs(new_folder) if it doesn't already exist.
-    -   It moves the file into the newly created folder using shutil.move(filepath, new_filepath).
--   At the end of the script, it checks if the script is being run as the main program (if **name** == "**main**":) and if so:
+    -   It iterates through all files in the specified directory using `os.listdir(path)`.
+    -   For each file, it constructs the full file path using `os.path.join(path, filename)`.
+    -   It checks if the current file is a regular file (not a directory) and if its name ends with ".gbc" using `os.path.isfile(filepath)` and `filename.endswith(".gbc")`.
+    -   If the conditions are met, it extracts the folder name (without the extension) using `os.path.splitext(filename)[0]`.
+    -   It creates a new folder with the extracted name using `os.makedirs(new_folder)` if it doesn't already exist.
+    -   It moves the file into the newly created folder using `shutil.move(filepath, new_filepath)`.
+-   At the end of the script, it checks if the script is being run as the main program (`if __name__ == "__main__":`) and if so:
     -   It specifies the directory to examine for ".gbc" files.
-    -   It calls the organizza_files_gba() function with the specified directory path.
-    
+    -   It calls the `organizza_files_gba()` function with the specified directory path.
